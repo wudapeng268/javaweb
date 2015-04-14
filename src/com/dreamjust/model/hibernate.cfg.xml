@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://10.0.16.16:4066/34137553-512633_mysq_ofi3p388
+		</property>
+		<property name="connection.username">7x4n9T1l</property>
+		<property name="connection.password">7i78562M91W1</property>  
+		
+		<!-- <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/hh</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">xyzzy123</property> -->
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">1</property>
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+		<!-- <property name="hbm2ddl.auto">update</property>
+ -->
+		<!-- <mapping resource="com/wp/hibernate/model/Student.hbm.xml" />
+		<mapping class="com.wp.hibernate.model.Teacher" /> -->
+		<mapping class="com.wp.hibernate.model.User" />
+		<!-- <mapping class="com.wp.hibernate.model.Wife" /> -->
+
+	</session-factory>
+
+</hibernate-configuration>

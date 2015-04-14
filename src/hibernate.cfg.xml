@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<!-- Database connection settings -->
+		
+ <!--<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/hhh
+		</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">xyzzy123</property> 	-->  
+		<!-- sae用户名 密码 -->
+	 	<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_dreamjust1</property>
+		<property name="connection.username">xl5z01jyyz</property>
+		<property name="connection.password">xizmy241lhxz3yxlwh0jzzj10545m3yh2wj15klj</property> 
+
+		<!-- JDBC connection pool (use the built-in) -->
+  	<property name="connection.pool_size">10</property> 
+		<!-- 配置连接池 -->
+		<property name="hibernate.connection.provider_class">
+               org.hibernate.connection.C3P0ConnectionProvider
+            </property>
+            <property name="c3p0.acquire_increment">1</property>
+            <property name="c3p0.idle_test_period">300</property>
+            <property name="c3p0.max_size">20</property>
+           <property name="c3p0.max_statements">100</property>
+            <property name="c3p0.min_size">5</property>
+            <property name="c3p0.timeout">90</property>
+            <property name="c3p0.preferredTestQuery ">select 1 from user where id=1</property>
+            <property name="c3p0.idleConnectionTestPeriod ">18000</property>           
+           <property name="c3p0.maxIdleTime">25000</property>         
+           <property name="c3p0.testConnectionOnCheckout">true</property>
+           
+	   <!--  <property name="initialSize"      >5</property>
+        <property name="maxActive"         ></property>
+        <property name="maxIdle">5</property>
+        <property name="testWhileIdle">true</property>
+        <property name="timeBetweenEvictionRunsMillis">15000</property>
+        <property name="numTestsPerEvictionRun">20</property>
+        <property name="validationQuery"    >SELECT 1 FROM DUAL</property>
+        <property name="removeAbandoned"  >true</property>
+        <property name="removeAbandonedTimeout" >180</property>  -->
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- Disable the second-level cache -->
+		<!-- hibernate3.5不使用二级缓存  需要两句话 -->
+		<property name="hibernate.cache.use_second_level_cache">false</property>
+		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+		<!-- <property name="hbm2ddl.auto">update</property>
+ -->
+ <!--  -->
+		<mapping class="com.dreamjust.model.User"/>
+		<mapping class="com.dreamjust.model.Province"/>
+		<mapping class="com.dreamjust.model.City"/>
+		<mapping class="com.dreamjust.model.Area"/>
+		<mapping class="com.dreamjust.model.Comment"/>
+		<mapping class="com.dreamjust.model.FoundThing"/>
+		<mapping class="com.dreamjust.model.LostThing"/>
+		<mapping class="com.dreamjust.model.Photo"/>
+		
+
+	</session-factory>
+
+</hibernate-configuration>
